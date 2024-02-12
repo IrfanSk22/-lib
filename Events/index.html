@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Crash Course | Events</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <style>
+    body {
+      font-size: 17px;
+      font-family: arial;
+      background: #f4f4f4;
+      line-height: 1.5em;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px #000 solid;
+      margin-bottom: 10px;
+    }
+    #container {
+      width: 90%;
+      margin: auto;
+      padding: 10px;
+    }
+  </style>
+  <body>
+    <header>
+      <h1>jQuery</h1>
+    </header>
+    <div id="container">
+      <h3>Mouse Events</h3>
+      <button id="btn1" class="btnClass">Button 1</button>
+      <button id="btn2">Button 2</button>
+      <button id="btn3">Button 3</button>
+
+      <p class="para1">
+        jQuery is a fast, small, and feature-rich JavaScript library. It makes
+        things like HTML document traversal and manipulation, event handling,
+        animation, and Ajax much simpler with an easy-to-use API that works
+        across a multitude of browsers. With a combination of versatility and
+        extensibility, jQuery has changed the way that millions of people write
+        JavaScript.
+      </p>
+
+      <hr />
+      <!-- <h1 id="coords"></h1> -->
+      <form id="form">
+        <labe>Name</labe><br />
+        <input type="text" name="name" id="name" />
+        <br />
+        <labe>Email</labe><br />
+        <input type="text" name="email" id="email" />
+        <br />
+        <label>Gender</label><br />
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <script>
+      $('document').ready(function () {
+        /*
+        $('#btn1').click(function () {
+          console.log('button clicked! using click()')
+        })
+
+        $('#btn2').on('click', function () {
+          console.log('button clicked! using on()')
+        })
+
+        $('#btn1').click(function () {
+          $('.para1').hide()
+        })
+
+        $('#btn2').click(function () {
+          $('.para1').show()
+        })
+
+        $('#btn3').click(function () {
+          $('.para1').toggle()
+        })
+
+        // double click event
+        $('#btn1').dblclick(function () {
+          $('.para1').toggle()
+        })
+
+        // hover is not an actual event it's just a shorthand syntex for mouseenter and mouseleave
+        $('#btn1').hover(function () {
+          $('.para1').toggle()
+        })
+
+        // it will not work as mentioned earlier that hover is not an actual event
+        $('#btn1').on('hover', function () {
+            $('.para1').toggle()
+        })
+
+        $('#btn1').mouseenter(function () {
+          $('.para1').toggle()
+        })
+
+        $('#btn1').mouseleave(function () {
+          $('.para1').toggle()
+        })
+
+        $('#btn1').mousemove(function () {
+          $('.para1').toggle()
+        })
+
+        $('#btn1').mousedown(function () {
+          $('.para1').toggle()
+        })
+
+        $('#btn1').mouseup(function () {
+          $('.para1').toggle()
+        })
+
+        
+        $('#btn1').click(function (e) {
+          console.log(e.currentTarget.id)
+          console.log(e.currentTarget.innerHTML)
+          console.log(e.currentTarget.outerHTML)
+          console.log(e.currentTarget.className)
+        })
+
+        $('#btn1').mousemove(function () {
+          $('.para1').toggle()
+        })
+
+        $(document).on('mousemove', function (e) {
+          $('#coords').html('Coords: Y: ' + e.clientY + 'X: ' + e.clientX)
+        })
+
+        $('input').focus(function () {
+          // console.log('focus')
+          $(this).css('background', 'pink')
+        })
+
+        $('input').blur(function () {
+          // console.log('blur')
+          $(this).css('background', 'white')
+        })
+
+        $('input').keyup(function (e) {
+          console.log(e.target.value)
+        })
+
+        $('select#gender').change(function (e) {
+          alert(e.target.value)
+        })
+
+        */
+
+        $('#form').submit(function (e) {
+          e.preventDefault()
+          var name = $('input#name').val()
+          console.log(name)
+        })
+      })
+    </script>
+  </body>
+</html>

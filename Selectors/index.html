@@ -65,27 +65,29 @@
     </div>
 
     <script>
-        console.log("jQuery Selectors in Action")
-      // $('heading').hide()
-      // $('h1#heading1').hide()
-      // $('.heading2').hide()
+      $('document').ready(function () {
+        console.log('jQuery Selectors in Action')
+        // $('heading').hide()
+        // $('h1#heading1').hide()
+        // $('.heading2').hide()
 
-      $('p span').css('color', 'red')
+        $('p span').css('color', 'red')
 
-      $('ul#list li:first').css('color', 'blue')
-      $('ul#list li:last').css('color', 'green')
-      $('ul#list li:even').css('background-color', 'orange')
-      $('ul#list li:odd').css('background-color', '#ccc')
-      $('ul#list li:nth-child(3n)').css('list-style', 'none')
-      $('ul#list li:nth-child(2)').css('color', 'magenta')
+        $('ul#list li:first').css('color', 'blue')
+        $('ul#list li:last').css('color', 'green')
+        $('ul#list li:even').css('background-color', 'orange')
+        $('ul#list li:odd').css('background-color', '#ccc')
+        $('ul#list li:nth-child(3n)').css('list-style', 'none')
+        $('ul#list li:nth-child(2)').css('color', 'magenta')
 
-      $(':button').hide()
+        $(':button').hide()
 
-      // $('a[href]').css('color', 'red')
-      $('[href]').css('color', 'red')
-      $('[href="https://yahoo.com"]').css('color', 'green')
+        // $('a[href]').css('color', 'red')
+        $('[href]').css('color', 'red')
+        $('[href="https://yahoo.com"]').css('color', 'green')
 
-      // $('*').hide()
+        // $('*').hide()
+      })
     </script>
   </body>
 </html>
