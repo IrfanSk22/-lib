@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     const CLIENT_ID = 'dac4fb3494f4e2923bbd'
     const CLIENT_SECRET = '26888e7f48bc575960439cf29c83de034d439e6c'
-    const ACCESS_TOKEN = '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'
+    // const ACCESS_TOKEN = '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'
 
     // Make request to github
     $.ajax({
@@ -13,9 +13,9 @@ $(document).ready(function () {
         client_id: CLIENT_ID,
         client_secret: CLIENT_SECRET
       },
-      headers: {
-        Authorization: 'token ' + ACCESS_TOKEN
-      },
+      //   headers: {
+      //     Authorization: 'token ' + ACCESS_TOKEN
+      //   },
       success: function (data) {
         AjaxRequestUsersRepo()
         BindProfile(data)
@@ -34,9 +34,9 @@ $(document).ready(function () {
           sort: 'created: asc',
           per_page: 5
         },
-        headers: {
-          Authorization: 'token ' + ACCESS_TOKEN
-        },
+        // headers: {
+        //   Authorization: 'token ' + ACCESS_TOKEN
+        // },
         success: function (data) {
           $.each(data, function (index, repo) {
             $('#repos').append(`
