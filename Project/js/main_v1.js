@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     const CLIENT_ID = 'dac4fb3494f4e2923bbd'
     const CLIENT_SECRET = '26888e7f48bc575960439cf29c83de034d439e6c'
-    const ACCESS_TOKEN = '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'
+    const ACCESS_TOKEN = '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'
 
     // Make request to github
     $.ajax({

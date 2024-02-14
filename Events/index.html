@@ -29,13 +29,15 @@
   </style>
   <body>
     <header>
-      <h1>jQuery</h1>
+      <h1>jQuery | Events</h1>
     </header>
     <div id="container">
       <h3>Mouse Events</h3>
       <button id="btn1" class="btnClass">Button 1</button>
       <button id="btn2">Button 2</button>
       <button id="btn3">Button 3</button>
+
+      <button id="test-btn">Test Button</button>
 
       <p class="para1">
         jQuery is a fast, small, and feature-rich JavaScript library. It makes
@@ -67,9 +69,17 @@
 
     <script>
       $('document').ready(function () {
-        /*
         $('#btn1').click(function () {
           console.log('button clicked! using click()')
+        })
+
+        $('#test-btn').on({
+          mouseenter: function () {
+            console.log('knock knock!')
+          },
+          click: function () {
+            console.log('Boom 🚀')
+          }
         })
 
         $('#btn2').on('click', function () {
@@ -100,7 +110,7 @@
 
         // it will not work as mentioned earlier that hover is not an actual event
         $('#btn1').on('hover', function () {
-            $('.para1').toggle()
+          $('.para1').toggle()
         })
 
         $('#btn1').mouseenter(function () {
@@ -123,7 +133,6 @@
           $('.para1').toggle()
         })
 
-        
         $('#btn1').click(function (e) {
           console.log(e.currentTarget.id)
           console.log(e.currentTarget.innerHTML)
@@ -156,8 +165,6 @@
         $('select#gender').change(function (e) {
           alert(e.target.value)
         })
-
-        */
 
         $('#form').submit(function (e) {
           e.preventDefault()

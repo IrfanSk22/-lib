@@ -29,7 +29,7 @@
   </style>
   <body>
     <header>
-      <h1>jQuery</h1>
+      <h1>jQuery | Ajax</h1>
     </header>
     <div id="container">
       <div id="result"></div>
@@ -45,8 +45,6 @@
 
     <script>
       $('document').ready(function () {
-        /*
-
         // load() method
         $('#result').load('test.html', function (responseTxt, statusTxt, xhr) {
           if (statusTxt == 'success') {
@@ -66,6 +64,8 @@
           })
         })
 
+        /*
+
         $.ajax({
           method: 'GET',
           url: 'https://jsonplaceholder.typicode.com/posts',
@@ -81,6 +81,25 @@
 
         */
 
+        $.ajax({
+          method: 'GET',
+          url: 'https://jsonplaceholder.typicode.com/posts',
+          dataType: 'json',
+          success: function (data) {
+            console.log(data)
+            $.map(data, function (post, i) {
+              $('#result').append(
+                '<h3>' + post.title + '</h3><p>' + post.body + '</p>'
+              )
+            })
+            // Handle success, update UI, etc.
+          },
+          error: function (xhr, status, error) {
+            console.error('Error fetching posts:', error)
+            // Handle error, show error message, etc.
+          }
+        })
+
         $('#postForm').submit(function (e) {
           e.preventDefault()
 
@@ -88,9 +107,27 @@
           var body = $('#body').val()
           var url = $(this).attr('action')
 
+          /*
+
           $.post(url, { title, body }).done(function (data) {
             console.log('Post Saved')
             console.log(data)
+          })
+
+          */
+
+          // you can also make above request like this
+          $.ajax({
+            type: 'POST',
+            url: url,
+            data: { title, body },
+            success: function (data) {
+              console.log('Post Saved')
+              console.log(data)
+            },
+            error: function (xhr, status, error) {
+              console.error('Error saving post:', error)
+            }
           })
         })
       })
